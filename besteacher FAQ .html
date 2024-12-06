@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BesTeacher FAQ</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffece7;
+        }
+        header {
+            background-color: #ffccb9;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #000;
+        }
+        header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        header .search-bar input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 250px;
+        }
+        header .icons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        header .icons .icon-profile {
+            cursor: pointer;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .faq-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .faq-section {
+            display: flex;
+            gap: 20px;
+        }
+        .faq-left, .faq-right {
+            flex: 1;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .faq-item:hover {
+            background-color: #f9f9f9;
+        }
+        .faq-item.open {
+            background-color: #f9f9f9;
+        }
+        .faq-item.open .faq-content {
+            display: block;
+        }
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffccb9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BesTeacher</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Que souhaitez-vous apprendre ?">
+        </div>
+        <div class="icons">
+            <div class="icon">🔔</div>
+            <div class="icon icon-profile" onclick="window.location.href='https://www.superprof.fr/le/2235/2862/?utm_source=google&utm_medium=ads_el&utm_campaign=EL_FR_SEARCH_Marque&gad_source=1&gbraid=0AAAAADMzO8LDBzk95R2DBR77GQnkS0wcm&gclid=CjwKCAiA9bq6BhAKEiwAH6bqoA2tlh0UIfP1d1s2APP1UAW4PiFk6pHtDS6R4lXsdc49EKRU5FbUDhoCAvsQAvD_BwE';">👤</div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="faq-title">FAQ</h1>
+        <div class="faq-section">
+            <div class="faq-left">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Qui</strong>
+                    <div class="faq-content">
+                        Vous ou vos enfants souhaitez apprendre de nouvelles compétences avec les meilleurs enseignants.
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Pourquoi</strong>
+                    <div class="faq-content">
+                        <!-- Contenu de la réponse ici -->
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Comment</strong>
+                    <div class="faq-content">
+                        <!-- Contenu de la réponse ici -->
+                    </div>
+                </div>
+            </div>
+            <div class="faq-right">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Où</strong>
+                    <div class="faq-content">
+                        <!-- Contenu de la réponse ici -->
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Je n’arrive pas à me connecter</strong>
+                    <div class="faq-content">
+                        <!-- Contenu de la réponse ici -->
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <strong>Je ne trouve plus mon identifiant</strong>
+                    <div class="faq-content">
+                        <!-- Contenu de la réponse ici -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Copyright © 2024 BesTeacher
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            element.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

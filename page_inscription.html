@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un compte</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Formulaire à gauche -->
+    <div class="form-container">
+      <h1>Créez votre compte</h1>
+      <form id="registerForm" method="POST" action="/register">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="adresse">Adresse postale</label>
+          <input type="text" id="adresse" name="adresse">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmez votre mot de passe</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="+33" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="cgu" name="cgu" required>
+          <label for="cgu">J'accepte les <a href="#">CGU</a></label>
+        </div>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
+
+    <!-- Logo et texte à droite -->
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo BesTeacher">
+      <p>“BesTeacher, l’éducation qui fait la différence”</p>
+    </div>
+  </div>
+
+  <footer>
+    Copyright © 2024 BesTeachers
+  </footer>
+</body>
+</html>

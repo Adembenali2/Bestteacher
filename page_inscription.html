@@ -1,206 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BesTeacher FAQ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un compte</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffece7;
-        }
-        header {
-            background-color: #ffccb9;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        header .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #000;
-        }
-        header .search-bar {
-            display: flex;
-            align-items: center;
-        }
-        header .search-bar input {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            width: 250px;
-        }
-        header .icons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        header .icons .icon-profile {
-            cursor: pointer;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .faq-title {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .faq-section {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        .faq-logo {
-            flex-shrink: 0;
-            width: 120px;
-        }
-        .faq-logo img {
-            max-width: 100%;
-            height: auto;
-        }
-        .faq-left, .faq-right {
-            flex: 1;
-        }
-        .faq-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            position: relative;
-            transition: background-color 0.3s;
-        }
-        .faq-item:hover {
-            background-color: #f9f9f9;
-        }
-        .faq-item .faq-toggle {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.2em;
-            background-color: #ffccb9;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        .faq-item.open {
-            background-color: #f9f9f9;
-        }
-        .faq-item.open .faq-content {
-            display: block;
-        }
-        .faq-content {
-            display: none;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #555;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
-        .icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ffccb9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f3f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 75%;
+      max-width: 800px;
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      margin: 10px auto;
+      height: auto;
+    }
+
+    .form-container {
+      flex: 2;
+      padding: 20px 30px;
+      background-color: #ffece7;
+    }
+
+    .form-container h1 {
+      color: #444444;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444444;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9em;
+      transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .form-group small {
+      display: block;
+      margin-top: 4px;
+      color: #888888;
+      font-size: 0.85em;
+    }
+
+    button[type="submit"] {
+      background-color: #ff6b6b;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ad4444;
+    }
+
+    .logo-container {
+      flex: 1;
+      background-color: #ffece8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .logo-container img {
+      max-width: 100px;
+      border-radius: 10px;
+    }
+
+    .logo-container p {
+      margin-top: 10px;
+      font-style: italic;
+      color: #444444;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 0.8em;
+      color: #777;
+      padding: 12px 0;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">BesTeacher</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Que souhaitez-vous apprendre ?">
+  <div class="container">
+    <div class="form-container">
+      <h1>Créez votre compte</h1>
+      <form id="registerForm" method="POST" action="/register">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+          <small>Votre nom complet est requis</small>
         </div>
-        <div class="icons">
-            <div class="icon">🔔</div>
-            <div class="icon icon-profile" onclick="window.location.href='https://www.superprof.fr/le/2235/2862/?utm_source=google&utm_medium=ads_el&utm_campaign=EL_FR_SEARCH_Marque&gad_source=1&gbraid=0AAAAADMzO8LDBzk95R2DBR77GQnkS0wcm&gclid=CjwKCAiA9bq6BhAKEiwAH6bqoA2tlh0UIfP1d1s2APP1UAW4PiFk6pHtDS6R4lXsdc49EKRU5FbUDhoCAvsQAvD_BwE';">👤</div>
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
         </div>
-    </header>
-
-    <main>
-        <h1 class="faq-title">FAQ</h1>
-        <div class="faq-section">
-            <div class="faq-logo">
-                <img src="logo-besteacher.png" alt="Logo BesTeacher">
-            </div>
-            <div class="faq-left">
-                <div class="faq-item">
-                    <strong>Qui</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Vous ou vos enfants souhaitez apprendre de nouvelles compétences avec les meilleurs enseignants.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <strong>Pourquoi</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Nous croyons que tout le monde mérite un enseignement personnalisé pour atteindre ses objectifs d'apprentissage.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <strong>Comment</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Trouvez un enseignant adapté à vos besoins, réservez un cours et commencez votre apprentissage immédiatement.
-                    </div>
-                </div>
-            </div>
-            <div class="faq-right">
-                <div class="faq-item">
-                    <strong>Où</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Nos professeurs sont disponibles en ligne ou près de chez vous, où que vous soyez.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <strong>Je n’arrive pas à me connecter</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Vérifiez votre adresse e-mail et votre mot de passe, ou cliquez sur "Mot de passe oublié" pour récupérer vos informations.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <strong>Je ne trouve plus mon identifiant</strong>
-                    <button class="faq-toggle" onclick="toggleFaq(this)">+</button>
-                    <div class="faq-content">
-                        Contactez notre support pour obtenir de l'aide à retrouver vos informations de connexion.
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="email">Adresse mail</label>
+          <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
         </div>
-    </main>
+        <div class="form-group">
+          <label for="adresse">Adresse postale</label>
+          <input type="text" id="adresse" name="adresse" placeholder="Rue, Code postal">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" placeholder="********" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmez votre mot de passe</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="********" required>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Numéro de téléphone</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="+33" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="cgu" name="cgu" required>
+          <label for="cgu">J'accepte les <a href="#">CGU</a></label>
+        </div>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
 
-    <footer>
-        Copyright © 2024 BesTeachers
-    </footer>
+    <div class="logo-container">
+      <img src="Logo BesTeacher.png" alt="Logo BesTeacher">
+      <p>“BesTeacher, l’éducation qui fait la différence”</p>
+    </div>
+  </div>
 
-    <script>
-        function toggleFaq(button) {
-            const faqItem = button.parentElement;
-            faqItem.classList.toggle('open');
-        }
-    </script>
+  <footer>
+    Copyright © 2024 BesTeacher
+  </footer>
 </body>
 </html>
   </footer>

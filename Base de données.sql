@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS BesTeacher;
 
 USE BesTeacher;
 
-CREATE TABLE Utilisateurs (
+CREATE TABLE IF NOT EXISTS Utilisateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,       -- Identifiant unique pour chaque utilisateur
     nom VARCHAR(100) NOT NULL,               -- Champ pour le nom
     prenom VARCHAR(100) NOT NULL,            -- Champ pour le prénom

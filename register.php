@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirmPassword = $_POST['confirmPassword'];
     $telephone = $_POST['telephone'];
     $accepte_cgu = isset($_POST['cgu']) ? 1 : 0;
+    $eleve_nom = $_POST['eleveNom'];
+    $eleve_prenom = $_POST['elevePrenom'];
+    $eleve_classe = $_POST['eleveClasse'];
+    $statut = $_POST['statut'];
 
     // Validation des mots de passe
     if ($mot_de_passe !== $confirmPassword) {
@@ -36,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mot_de_passe_hache = password_hash($mot_de_passe, PASSWORD_BCRYPT);
 
     // Préparer la requête SQL pour insérer les données
-    $sql = "INSERT INTO Utilisateurs (nom, prenom, email, adresse_postale, mot_de_passe, telephone, accepte_cgu)
-            VALUES (:nom, :prenom, :email, :adresse, :mot_de_passe, :telephone, :accepte_cgu)";
+    $sql = "INSERT INTO Utilisateurs (nom, prenom, email, adresse_postale, mot_de_passe, telephone, accepte_cgu, eleve_nom, eleve_prenom, eleve_classe, statut)
+            VALUES (:nom, :prenom, :email, :adresse, :mot_de_passe, :telephone, :accepte_cgu, :eleve_nom, :eleve_prenom, :eleve_classe, :statut )";
 
     // Exécution de la requête
     try {
@@ -49,6 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':mot_de_passe', $mot_de_passe_hache);
         $stmt->bindParam(':telephone', $telephone);
         $stmt->bindParam(':accepte_cgu', $accepte_cgu);
+        $stmt->bindParam(':eleve_nom', $eleve_nom);
+        $stmt->bindParam(':eleve_prenom', $eleve_prenom);
+        $stmt->bindParam(':eleve_classe', $eleve_classe);
+        $stmt->bindParam(':statut', $statut);
 
         if ($stmt->execute()) {
             echo "Inscription réussie !";

@@ -9,13 +9,13 @@
 <body>
   <div class="container">
     <div class="left-panel">
-      <img src="Logo besteacher.png" alt="BesTeacher Logo">
+      <img src="Logo.png" alt="BesTeacher Logo">
       <hr style="border: 1px solid black; width: 100%;">
       <p>BesTeacher, l'éducation qui fait la différence</p>
     </div>
     <div class="right-panel">
       <center><h2>Connectez-vous pour accéder à votre espace</h2></center>
-      <form>
+      <form id="registerForm" method="POST" action="register1.php">
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Votre email">

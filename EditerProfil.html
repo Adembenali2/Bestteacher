@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BesTeacher - Profil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">BesTeacher</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Que souhaitez-vous apprendre ?">
+        </div>
+        <div class="user-menu">
+            <button class="notifications"></button>
+            <button class="profile"></button>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <aside class="sidebar">
+            <img class="logo-icon" src="logo.png" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="#">Éditer profil</a></li>
+                    <li><a href="#">Notification</a></li>
+                    <li><a href="#">Sécurité</a></li>
+                    <li><a href="#">Aide</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="profile-form">
+            <h1>Éditer Profil</h1>
+            <form action="/update-profile" method="POST">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse mail</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="adresse">Adresse postale</label>
+                    <input type="text" id="adresse" name="adresse">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmez votre mot de passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+33">
+                </div>
+
+                <button type="submit" class="btn-submit">Enregistrer</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="PageInscription.css" />
 </head>
 <body>
-  <header>
-    BesTeacher - Créez votre compte
-  </header>
-
   <div class="container">
     <div class="form-container">
       <h1>Créez votre compte</h1>
@@ -79,7 +75,7 @@
 
           <div class="cgu-container">
             <input type="checkbox" id="cgu" name="cgu" required>
-            <label for="cgu">J'accepte les <a href="#">CGU</a></label>
+            <label for="cgu">J'accepte les <a href="cgu.html">CGU</a></label>
           </div>
 
           <button type="submit">S'inscrire</button>

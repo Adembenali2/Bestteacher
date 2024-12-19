@@ -60,8 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
             echo "Inscription réussie !";
+            sleep(2);
+            header("Location: page_bienvenue.php");
         } else {
             echo "Une erreur est survenue lors de l'inscription.";
+            
         }
     } catch (PDOException $e) {
         echo "Erreur lors de l'insertion des données : " . $e->getMessage();

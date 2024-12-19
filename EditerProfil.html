@@ -4,17 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BesTeacher - Éditer Profil</title>
-  <link rel="stylesheet" href="EditerProfil.css">
-    </style>
+    <link rel="stylesheet" href="EditerProfil.css">
+    <script>
+        // Fonction pour afficher le message de notification
+        function afficherNotification() {
+            const profileForm = document.querySelector('.profile-form');
+            profileForm.innerHTML = `
+                <h2>Notifications</h2>
+                <p>Votre compte est bien validé ! Vous pouvez maintenant accéder à toutes les fonctionnalités.</p>
+            `;
+        }
+
+        // Fonction pour rediriger vers le formulaire de contact
+        function allerAide() {
+            const profileForm = document.querySelector('.profile-form');
+            profileForm.innerHTML = `
+                <h2>Contactez-nous</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse mail</label>
+                        <input type="email" id="email" placeholder="Votre adresse mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Décrivez votre problème"></textarea>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            `;
+        }
+    </script>
 </head>
 <body>
     <!-- En-tête -->
     <header>
-        <h1>Bes<span>Teacher</span></h1>
+        <a href="PageInscription.html" style="text-decoration: none;">
+            <h1>Bes<span>Teacher</span></h1>
+        </a>
         <input type="text" placeholder="Que souhaitez-vous apprendre ?" />
         <div class="icons">
-            <i>&#128276;</i> <!-- Icône de notification -->
-            <i>&#128100;</i> <!-- Icône de profil -->
+            <i onclick="window.location.href='PageInscription.html';" style="cursor: pointer;">&#128100;</i> <!-- Icône de profil -->
         </div>
     </header>
 
@@ -22,12 +55,14 @@
     <div class="container">
         <!-- Barre latérale -->
         <aside class="sidebar">
-            <img src="https://via.placeholder.com/100" alt="Logo">
+            <img src="logo-besteacher.png" alt="Logo BesTeacher" style="width: 200px; height: auto;">
+
+
             <ul>
-                <li><i>&#9998;</i> Éditer profil</li>
-                <li><i>&#128276;</i> Notification</li>
+                <li onclick="window.location.reload();" style="cursor: pointer;"><i>&#9998;</i> Éditer profil</li>
+                <li onclick="afficherNotification();" style="cursor: pointer;"><i>&#128276;</i> Notification</li>
                 <li><i>&#128274;</i> Sécurité</li>
-                <li><i>&#10067;</i> Aide</li>
+                <li onclick="allerAide();" style="cursor: pointer;"><i>&#10067;</i> Aide</li>
             </ul>
         </aside>
 
@@ -38,39 +73,39 @@
                 <div class="form-group">
                     <div>
                         <label for="nom">Nom</label>
-                        <input type="text" id="nom" placeholder="">
+                        <input type="text" id="nom" value="Dupont" placeholder="Nom">
                     </div>
                     <div>
                         <label for="prenom">Prénom</label>
-                        <input type="text" id="prenom" placeholder="">
+                        <input type="text" id="prenom" value="Jean" placeholder="Prénom">
                     </div>
                 </div>
                 <div class="form-group">
                     <div>
                         <label for="email">Adresse mail</label>
-                        <input type="email" id="email" placeholder="">
+                        <input type="email" id="email" value="jean.dupont@email.com" placeholder="Adresse mail">
                     </div>
                 </div>
                 <div class="form-group">
                     <div>
                         <label for="adresse">Adresse postale</label>
-                        <input type="text" id="adresse" placeholder="">
+                        <input type="text" id="adresse" value="123 Rue de Paris, 75001 Paris" placeholder="Adresse postale">
                     </div>
                 </div>
                 <div class="form-group">
                     <div>
                         <label for="password">Mot de passe</label>
-                        <input type="password" id="password" placeholder="">
+                        <input type="password" id="password" value="motdepasse123" placeholder="Mot de passe">
                     </div>
                     <div>
                         <label for="confirm-password">Confirmez votre mot de passe</label>
-                        <input type="password" id="confirm-password" placeholder="">
+                        <input type="password" id="confirm-password" value="motdepasse123" placeholder="Confirmez le mot de passe">
                     </div>
                 </div>
                 <div class="form-group">
                     <div>
                         <label for="phone">Numéro de téléphone</label>
-                        <input type="tel" id="phone" placeholder="+33">
+                        <input type="tel" id="phone" value="+33 6 12 34 56 78" placeholder="Numéro de téléphone">
                     </div>
                 </div>
             </form>

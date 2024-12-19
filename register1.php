@@ -40,17 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Vérification du mot de passe
             if (password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
                 // Connexion réussie
-                echo "Connexion réussie. Bienvenue, " . htmlspecialchars($utilisateur['prenom']) . " " . htmlspecialchars($utilisateur['nom']) . "!";
-                // Redirection (optionnel)
-                // header('Location: espace_utilisateur.php');
-                // exit;
+                session_start();
+                $_SESSION['prenom'] = $utilisateur['prenom'];
+                $_SESSION['nom'] = $utilisateur['nom'];
+                header("Location: bienvenue.php");
+                exit;
             } else {
-                // Mot de passe incorrect
-                echo "Erreur : Mot de passe incorrect.";
+                header("Location: mdp.php");
             }
         } else {
-            // Utilisateur non trouvé
-            echo "Erreur : Aucun compte trouvé avec cet email.";
+            header("Location: erreur_connexion.php");
         }
     } catch (PDOException $e) {
         echo "Erreur lors de la connexion : " . $e->getMessage();
